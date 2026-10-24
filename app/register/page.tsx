@@ -70,7 +70,7 @@ function SectionCard({ title, subtitle, children }: { title: string; subtitle?: 
 }
 
 function MemberForm({
-  index,
+  index: _index,
   values,
   onChange,
   label,

@@ -47,7 +47,7 @@ export async function GET(req: NextRequest) {
     }
 
     // Remove sensitive fields from list view
-    const sanitized = rows.map(({ leader_phone, leader_student_id, member2_student_id, member3_student_id, ...rest }) => rest);
+    const sanitized = rows.map(({ leader_phone: _lp, leader_student_id: _ls, member2_student_id: _m2s, member3_student_id: _m3s, ...rest }) => rest);
 
     const total = db.prepare("SELECT COUNT(*) as count FROM registrations").get() as { count: number };
     const teams = db.prepare("SELECT COUNT(*) as count FROM registrations WHERE participation_type != 'individual'").get() as { count: number };
