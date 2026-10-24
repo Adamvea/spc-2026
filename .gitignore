@@ -28,6 +28,9 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# SQLite database (never commit registrant data)
+/data
+
 # vercel
 .vercel
 
